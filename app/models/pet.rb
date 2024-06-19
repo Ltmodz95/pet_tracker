@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Pet < ActiveMemory
+class Pet < ApplicationMemory
   VALID_TRACKER_TYPES = {
     'cat' => %w[small big],
     'dog' => %w[small medium big]
