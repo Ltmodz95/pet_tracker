@@ -7,6 +7,10 @@ class PetsController < ApplicationController
   end
 
   def create
+    pet = Pet.new(pet_params)
+
+    return render json: pet.errors.messages unless pet.valid?
+
     render json: Pet.create(pet_params)
   end
 
