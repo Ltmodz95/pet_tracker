@@ -26,15 +26,15 @@ the inheritance to `ApplicationRecord` it will interact with the database withou
 
 ### EndPoints
 
-#### Allowed params:
+#### Pet Creation:
+
+**Params:**
 
 - `pet_type`:`['cat','dog']`
 - `tracker_type`: `['small', 'medium', 'big']`
 - `owner_id`:`Integer`
 - `in_zone`:`[true,false]`
 - `lost_tracker`: `[true,false]`
-
-#### Pet Creation:
 
 ```curl
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -54,8 +54,10 @@ curl -X GET http://localhost:3000/pets
 
 #### Pet Querying
 
+Params: `id`:`Integer`
+
 ```curl
-curl -X GET http://localhost:3000/pets/1
+curl -X GET http://localhost:3000/pets/:id
 ```
 
 #### Pet Out of zone
