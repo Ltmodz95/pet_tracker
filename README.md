@@ -30,11 +30,11 @@ the inheritance to `ApplicationRecord` it will interact with the database withou
 
 **Params:**
 
-- `pet_type`:`['cat','dog']`
-- `tracker_type`: `['small', 'medium', 'big']`
+- `pet_type`:`String:['cat','dog']`
+- `tracker_type`: `String:['small', 'medium', 'big']`
 - `owner_id`:`Integer`
-- `in_zone`:`[true,false]`
-- `lost_tracker`: `[true,false]`
+- `in_zone`:`Boolean:[true,false]`
+- `lost_tracker`: `Boolean:[true,false]`
 
 ```curl
 curl -X POST -H "Content-Type: application/json" -d '{
