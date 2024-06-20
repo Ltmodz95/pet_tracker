@@ -22,7 +22,11 @@ to run the test cases run:
 Replacing `ApplicationRecord` inheritance from the models, As `ApplicationRecord` interacts with Persistent storage.
 With `ApplicationMemory` which is a class that stores the records in a hashmap but it is only valid in the memory,
 which is valotile and gets erased, The `Pet` model inherits from `ApplictionMemory` is built in a way that if we change
-the inheritance to `ApplicationRecord` it will interact with the database without changing anything else.
+the inheritance to `ApplicationRecord` and created the migrations and migrated the database
+it will interact with the database without changing anything else.
+
+in `ApplicationMemory` there are two hashes one for the pets and other to carry out the lost tracker unique attribute for cats
+simulating the a `belongs_to` `has_one` relation in rails
 
 ### EndPoints
 
