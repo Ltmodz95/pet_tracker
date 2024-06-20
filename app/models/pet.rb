@@ -6,7 +6,7 @@ class Pet < ApplicationMemory
     'dog' => %w[small medium big]
   }.freeze
 
-  attr_accessor :owner_id, :pet_type, :tracker_type, :in_zone
+  attr_accessor :owner_id, :pet_type, :tracker_type, :in_zone, :lost_tracker
 
   validates :owner_id, presence: true
   validates :pet_type, inclusion: { in: %w[cat dog] }
