@@ -16,8 +16,8 @@ class ApplicationMemory
   end
 
   class << self
-    def pets = @pets ||= {}
-    def pets_tracker_status = @pets_tracker_status ||= {}
+    def pets = @pets ||= {}.with_indifferent_access
+    def pets_tracker_status = @pets_tracker_status ||= {}.with_indifferent_access
 
     def create(attrs)
       lost_tracker = attrs.delete(:lost_tracker)
@@ -29,7 +29,7 @@ class ApplicationMemory
       pets[id] = { id: }.merge(**attrs)
 
       if pet.pet_type == 'cat' && !lost_tracker.nil?
-        tracker_id = pets_tracker_status.count(+1)
+        tracker_id = pets_tracker_status.count + 1
         pets_tracker_status[id] = { id: tracker_id, lost_tracker: }
         return pets[id].merge({ lost_tracker: })
       end
@@ -38,7 +38,7 @@ class ApplicationMemory
     end
 
     def find(id)
-      return pets[id].merge({ lost_tracker: pets_tracker_status[id] }) if pets_tracker_status[id]
+      return pets[id].merge({ lost_tracker: pets_tracker_status[id][:lost_tracker] }) if pets_tracker_status[id]
 
       pets[id]
     end

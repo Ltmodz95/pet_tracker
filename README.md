@@ -60,7 +60,7 @@ Params: `id`:`Integer`
 curl -X GET http://localhost:3000/pets/:id
 ```
 
-#### Pet Out of zone
+#### Pets Out of zone
 
 ```curl
 curl -X GET http://localhost:3000/pets_out_of_zone
