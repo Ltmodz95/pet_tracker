@@ -15,7 +15,7 @@ class PetsController < ApplicationController
   end
 
   def out_of_zone
-    Pet.all
+    render json: PetsOutOfZoneService.run
   end
 
   private

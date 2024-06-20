@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   resources :pets
-  get 'pets/out_of_zone', to: 'pets#out_of_zone'
+  get 'pets_out_of_zone', to: 'pets#out_of_zone'
 
   # Defines the root path route ("/")
   # root "posts#index"
